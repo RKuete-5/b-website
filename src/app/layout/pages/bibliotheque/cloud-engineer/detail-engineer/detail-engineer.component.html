@@ -1,0 +1,116 @@
+<div class="c-inner">
+
+    <div class="sub-nav">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/bebliotheque/cloud-engineering"><span>{{"Cloud engineering"}}</span></a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            <span>{{ post?.title }}</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+    
+    <div class="content-y">
+      <div class="f-bloc">
+        <img
+          [src]="
+            post?.feature_image != null
+              ? post?.feature_image
+              : '../../../../../assets/img/radiant-gradient.svg'
+          "
+          alt=""
+        />
+        <div class="flyover">
+          <span>{{ post?.title }}</span>
+          <div>
+            <span>Cybersécurité</span>
+            <span></span>
+            <span>{{ post?.reading_time }} minutes</span>
+            <span></span>
+            <span
+              >{{ post?.created_at | date: "shortDate" }} par
+              {{ post?.authors[0]?.name }}</span
+            >
+          </div>
+        </div>
+      </div>
+  
+      <div class="g-bloc">
+          <div id="view-f" class="view-f" [innerHtml]="post?.html | safe">
+          </div>
+  
+          <div class="r-links">
+            <div>
+              <a><em class="bi bi-share"></em></a>
+              <a><em class="bi bi-linkedin"></em></a>
+              <a><em class="bi bi-envelope-fill"></em></a>
+              <a><em class="bi bi-slack"></em></a>
+              <a><em class="bi bi-whatsapp"></em></a>
+              <a><em class="bi bi-twitter"></em></a>
+              <a><em class="bi bi-facebook"></em></a>
+            </div>
+            <div>
+              <span>Tags:</span>
+              <a><span>SECURITE</span></a>
+              <a><span>DEVOPS</span></a>
+            </div>
+            <div>
+              <div class="circle">
+                <img [src]="post?.authors[0]?.profile_image" alt="" />
+              </div>
+              <div class="desc">
+                <span>{{ post?.authors[0]?.name }}</span>
+                <span>Happiness office chez BeOpenIT</span>
+                <span>Scorpion ascendant Scorpion</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="similar-ar">
+            <div class="hj">
+              <span>ARTICLES SIMILAIRES </span>
+            </div>
+            <div class="mob-ctn">
+              <div class="item">
+                <div class="sm green">
+                    <span>CLOUD ENGINEERING</span>
+                    <span>Les métiers de l’IT 360° : DevSecOps, Data, IA & ML…</span>
+                    <a [routerLink]="['/bebliotheque/cloud-engineering']"><span>Voir tous les articles</span></a>    
+                </div>
+            </div>
+            <div class="item">
+                <div class="am">
+                    <img [src]="posts[0]?.feature_image" alt="ARTICLE" >
+                    <div class="description">
+                        <span>{{posts[0]?.title}}</span>
+                        <span>DevOps | {{posts[0]?.created_at | date:'mediumDate':'fr'}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="am">
+                    <img [src]="posts[1]?.feature_image"alt="ARTICLE" >
+                    <div class="description">
+                        <span>{{posts[1]?.title}}</span>
+                        <span>DevOps | {{posts[1]?.created_at | date:'mediumDate':'fr'}}</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- <div class="sommaire"></div> -->
+  
+    </div>
+  
+    <app-footer></app-footer>
+  </div>
+  
+
+<div class="loading" *ngIf="spin == true">
+  <em class="fas fa-dharmachakra fa-spin"></em>
+</div>

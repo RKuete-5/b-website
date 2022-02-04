@@ -1,0 +1,98 @@
+<div class="inner-c">
+    <div class="sub-nav">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item" routerLink="/bebliotheque/wikibedia"><a><span>{{'Wikibedia'}}</span></a></li>
+              <li class="breadcrumb-item active" aria-current="page"><span>{{ post?.title }}</span></li>
+            </ol>
+          </nav>
+    </div>
+    <div class="content-mn">
+        <div class="side-a">
+            <div class="view-f" [innerHtml]="post?.html | safe">
+                
+            </div>
+        </div>
+        <!-- <div class="side-b">
+            <div class="keywords">
+                <div class="hd">
+                    <span>KEYWORDS</span>
+                </div>
+                <div class="bd">
+
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="asavoir">
+        <div class="ctn-card">
+                <div class="card" *ngFor="let item of [].constructor(8)">
+                    <div class="card-header">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <span>Solution</span>
+                        </div>
+                        <div>
+                            <span>Docker</span>
+                            <span>Solution de conteneurisation de reference</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+<div class="mobile-view">
+    <div class="sub-nav">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a><span>{{'Wikibedia'}}</span></a></li>
+              <li class="breadcrumb-item active" aria-current="page"><span>{{ post?.title }}</span></li>
+            </ol>
+          </nav>
+    </div>
+    <div class="content-mn">
+        <div class="side-a">
+            <div class="view-f" [innerHtml]="post?.html | safe">
+
+            </div>
+        </div>
+        <div class="side-b">
+            <div class="keywords">
+                <div class="hd">
+                    <span>KEYWORDS</span>
+                </div>
+                <div class="bd">
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="asavoir">
+        <div class="ctn-card">
+            <div class="card" *ngFor="let item of [].constructor(8)">
+                <div class="card-header">
+                    <img src="" alt="">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <span>Solution</span>
+                    </div>
+                    <div>
+                        <span>Docker</span>
+                        <span>Solution de conteneurisation de reference</span>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+
+<div class="loading" *ngIf="spin == true">
+    <em class="fas fa-dharmachakra fa-spin"></em>
+</div>

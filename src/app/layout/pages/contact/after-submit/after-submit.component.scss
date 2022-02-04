@@ -1,0 +1,245 @@
+
+.comh {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      width: 10px;
+  }
+  
+  &::-webkit-scrollbar-track {
+      background: transparent;
+      width: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+      background-color: #191f31;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+      -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.6);
+      box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.6);
+  } 
+
+    section {
+       
+        &.fouth {
+            width: 100%;
+            background-color: #191f31;
+            height: 85vh;
+
+            .hder{
+                width: 100%;
+                height: 25vh;
+                padding-left: 25vw;
+                padding-right: 25vw;
+                padding-top: 15vh;
+                text-align: center;
+
+                span {
+                    &:nth-child(1) {
+                        display: block;
+                        color: #FFF;
+                        font-size: 1.5vmax;
+                    }
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                }
+            }
+
+            .bder{
+                width: 100%;
+                height: 40vh;
+                padding-top: 15vh;
+                padding-left: 20vw;
+                padding-right: 20vw;
+
+                .cad {
+                    width: 85%;
+                    height: 25vh;
+                    background-color: #FFF;
+                    border-radius: .2rem;
+                    position: relative;
+                    .inner {
+                        position: absolute;
+                        width: 100%;
+                        height: 0%;
+                        z-index: 0;
+                        bottom: 0;
+                    }
+                    .flip {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        justify-content: space-between;
+                        padding: 1.5vmax 1vmax;
+                        background-color: transparent;
+                        position: absolute;
+                        z-index: 1;
+                        span {
+                            font-size: .9vmax;
+                            color: #191f31;
+                        }
+                        .bg-1 {
+                            max-width: 35%;
+                            content: url("../../../../../assets/img/Contacts-icons-01.svg");
+                        }
+                        .bg-2 {
+                            max-width: 35%;
+                            content: url("../../../../../assets/img/Contacts-icons-02.svg");
+                        }
+                        .bg-3 {
+                            max-width: 35%;
+                            content: url("../../../../../assets/img/Contacts-icons-03.svg");
+                        }
+                    }
+
+
+                    &:hover {
+                        .inner {
+                            height: 100%;
+                            transition: all .3s ease-in-out;
+                        }
+                        .flip {
+                            span {
+                                color: #FFF;
+                            }
+
+                            .bg-1 {
+                                content: url("../../../../../assets/img/Contacts-icons-01-wh.svg");
+                            }
+                            .bg-2 {
+                                content: url("../../../../../assets/img/Contacts-icons-02-wh.svg");
+                            }
+                            .bg-3 {
+                                content: url("../../../../../assets/img/Contacts-icons-03-wh.svg");
+                            }
+                        }
+
+                        &.blue {
+                            .inner {
+                                background-color: #517BBD;
+                            }
+                        }
+
+                        &.green {
+                            .inner {
+                                background-color: #199E58;
+                            }
+                        }
+
+                        &.red {
+                            .inner {
+                                background-color: #DD4F42;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+
+
+@media (min-width: 320px) and (max-width: 1024px) {
+    .comh {
+        &::-webkit-scrollbar {
+          width: 0px;
+        }
+        section {
+            width: 100%;
+            &.fouth {
+                width: 100%;
+                background-color: #191f31;
+                height: 125vh;
+
+                .hder{
+                    width: 100%;
+                    height: 25vh;
+                    padding-left: 5vw;
+                    padding-right: 5vw;
+                    padding-top: 8vh;
+                    text-align: center;
+
+                    span {
+                        &:nth-child(1) {
+                            display: none;
+                        }
+                        &:nth-child(2) {
+                            display: block;
+                            color: #FFF;
+                            font-size: 2.5vmax;
+                            line-height: 2;
+                        }
+                    }
+                }
+
+                .bder{
+                    width: 100%;
+                    height: 100vh;
+                    padding-top: 5vh;
+                    padding-left: 5vw;
+                    padding-right: 5vw;
+                    @media (hover: none) {
+                           
+                    }
+                    .cad {
+                        width: 65%;
+                        height: 25vh;
+                        background-color: #FFF;
+                        border-radius: .2rem;
+                        margin: 3vh auto;
+                        .inner {
+                            position: absolute;
+                            width: 100%;
+                            height: 0%;
+                            z-index: 0;
+                            bottom: 0;
+                        }
+                        .flip {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            text-align: center;
+                            justify-content: space-between;
+                            padding: 2.8vmax 1vmax;
+                            background-color: transparent;
+                            position: absolute;
+                            z-index: 1;
+                            span {
+                                font-size: 1.65vmax;
+                                color: #191f31;
+                            }
+                            .bg-1 {
+                                max-width: 10vmax;
+                                content: url("../../../../../assets/img/Contacts-icons-01.svg");
+                            }
+                            .bg-2 {
+                                max-width: 10vmax;
+                                content: url("../../../../../assets/img/Contacts-icons-02.svg");
+                            }
+                            .bg-3 {
+                                max-width: 10vmax;
+                                content: url("../../../../../assets/img/Contacts-icons-03.svg");
+                            }
+                        }
+
+                       
+                    }
+    
+                }
+            }
+        }
+    }
+}

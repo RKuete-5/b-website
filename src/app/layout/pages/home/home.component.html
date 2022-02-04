@@ -1,0 +1,334 @@
+<div class="comh" (scroll)="onScroll($event)">
+    <app-header [status]="fixed"></app-header>
+    <section class="banner">
+        <div class="parallax" data-parallax>
+            <div class='stars'></div>
+            <div class='stars2'></div>
+            <div class='stars3'></div>
+        </div>
+        <div class="hder flex-y">
+            <span>Créateurs d’infrastructures cloud<br>résilientes, flexibles et sécurisées.</span>
+            <span>{{banner}}</span>
+            <button (click)="scrollTo('second')"><span></span>
+                <span>{{'UNE EXPERTISE 360°'}}</span>
+            </button>
+        </div>
+        <img class="tw-left" alt="TOWER-LF">
+        <img class="tw-right" alt="TOWER-RT">
+        <img class="cloud" alt="CLOUD">
+    </section>
+
+    <section class="second" id="second">
+        <div class="hder">
+            <span>{{'Nous apportons des solutions simples à des cas d’usage complexes.'}}</span>
+        </div>
+        <div class="bder">
+            <span>{{''}}</span>
+        </div>
+        <div class="der">
+            <div class="slick-o">
+                <div class="v-block" *ngFor="let item of cards; let i = index" [class]="item?.class">
+                    <div class="item-o">
+                        <div class="circle" [style.background]="item?.color">
+                            <img src="../../../../assets/img/brain-icon.svg" alt="Brain">
+                        </div>
+                        <div class="content flex-x">
+                                <div class="flex-x">
+                                    <span [style.color]="item?.color">{{item?.title}}</span>
+                                    <span>{{item?.description}}</span>
+                                    <span>{{item?.detail}}</span>
+                                </div>
+                                <a [style.background]="item?.color" class="flex-xy" (click)="redirectTo(item?.url)">
+                                    <span>{{item?.action}}<em  class="fas fa-chevron-right"></em>  </span>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="third">
+    <img alt="CLOUD">
+    <div class="parallax" data-parallax>
+        <div class='stars'></div>
+        <div class='stars2'></div>
+        <div class='stars3'></div>
+    </div>
+    <div class="hder">
+        <span>{{'Réunissez le meilleur du cloud pour une adoption collective et durable.'}}</span>
+    </div>
+    <div class="der flex-x">
+        <div>
+            <div class="v-block blue">
+                <img class="h-puzzle" src="../../../../assets/img/blue.svg" alt="" srcset="">
+                <div class="content flex-around">
+                    <div class="title">
+                        <span>LES <span style="color:#517BBD;"> GÉNIES</span> DE <br> L’INNOVATION CONTINUE</span>
+                    </div>
+                    <div class="description">
+                        <span>En diffusant la culture DevSecOps au cœur de vos opérations, nous parachevons vos cycles de développement par l’automatisation et la sécurisation de tout votre pipeline CI & CD pour offrir une expérience utilisateur optimale.</span>
+                    </div>
+                  
+                </div>
+        </div>
+
+        <div class="v-block green">
+            <img class="h-puzzle" src="../../../../assets/img/green.svg" alt="" srcset="">
+            <div class="content flex-around">
+                <div class="title">
+                    <span>LES <span style="color:#1A9E59;"> GARDIENS</span> D’UN <br> R.O.I POSITIF</span>
+                </div>
+                <div class="description">
+                    <span>Nos ingénieurs œuvrent à la construction d’une infrastructure résiliente et au développement d’environnements utilisateurs sans faille en intégrant les techniques de sécurité les plus avancées dans tout le cycle de vie de vos applications. </span>
+                </div>
+               
+            </div>
+        </div>
+        </div>
+
+      <div>
+        <div class="v-block yellow">
+            <img class="h-puzzle" src="../../../../assets/img/yellow.svg" alt="" srcset="">
+            <div class="content flex-around">
+                <div class="title">
+                    <span>VOS  <span style="color:#F2B229;"> FUTURES </span> MEILLEURES <br> DÉCISIONS COMMERCIALES</span>
+                     
+                </div>
+                <div class="description">
+                    <span>Grand défi du 21e siècle, la réussite d’un projet Data ouvre la voie à de meilleurs choix stratégiques. Notre mission est de vous fournir des données contextualisées, enrichies, et opportunes en sensibilisant vos équipes à la création de workflow agiles et unifiées.</span>
+                </div>
+               
+            </div>
+        </div>
+
+        <div class="v-block red">
+            <img class="h-puzzle" src="../../../../assets/img/red.svg" alt="" srcset="">
+            <div class="content flex-around">
+                <div class="title">
+                    <span>UN <span style="color:#DB4538;"> CAPITAL HUMAIN </span> ENRICHI, <br> AUTONOME & CERTIFIÉ</span>
+                </div>
+                <div class="description">
+                    <span>Pour parfaire notre accompagnement, nous vous aidons à maintenir le cap en ancrant durablement les hards et les softs skills nécessaires à la réussite de vos cas d’usages Kubernetes via un parcours de formations certifié et certifiant. 
+                    </span>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="slick-io">
+        <div class="v-block blue">
+            <img class="h-puzzle" src="../../../../assets/img/blue.svg" alt="" srcset="">
+            <div class="content flex-around">
+                <div class="title">
+                    <span>LES <span style="color:#517BBD;"> GÉNIES</span> DE <br> L’INNOVATION CONTINUE</span>
+                </div>
+                <div class="description">
+                    <span>Un time to market réduit, un SI agile, une expérience utilisateur optimale. En diffusant la culture DevOps au cœur de vos opérations, nous achevons ces objectifs par l’automatisation et la sécurisation de vos cycles développement.</span>
+                </div>
+            </div>
+    </div>
+
+    <div class="v-block green">
+        <img class="h-puzzle" src="../../../../assets/img/green.svg" alt="" srcset="">
+        <div class="content flex-around">
+            <div class="title">
+                <span>LES <span style="color:#1A9E59;"> GARDIENS</span> D’UN <br> R.O.I POSITIF</span>
+            </div>
+            <div class="description">
+                <span>La sécurité occupe toutes vos problématiques. Avec vous, nous œuvrons à la production d’une infrastructure résiliente et d’environnements utilisateurs sécurisés en intégrant les techniques les plus avancées dans tout le cycle de vie de vos applications.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="v-block yellow">
+        <img class="h-puzzle" src="../../../../assets/img/yellow.svg" alt="" srcset="">
+        <div class="content flex-around">
+            <div class="title">
+                <span>VOS  <span style="color:#F2B229;"> FUTURES </span> MEILLEURES <br> DÉCISIONS COMMERCIALES</span>
+                 
+            </div>
+            <div class="description">
+                <span>Grand défis du 21ème siècle, la donnée pilote vos opérations stratégiques. Notre mission est de vous fournir une data contextualisée, enrichie, et opportune en sensibilisant vos équipes à la création de workflow Agiles et ultra-simplifiés.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="v-block red">
+        <img class="h-puzzle" src="../../../../assets/img/red.svg" alt="" srcset="">
+        <div class="content flex-around">
+            <div class="title">
+                <span>UN <span style="color:#DB4538;"> CAPITAL HUMAIN </span> ENRICHI, <br> AUTONOME & CERTIFIÉ</span>
+            </div>
+            <div class="description">
+                <span>Au-delà de notre accompagnement de terrain, nous vous aidons à maintenir le cap en ancrant durablement les Hards et softs skills nécessaires à la réussite de vos use cases Kubernetes via un parcours de formations certifié et certifiant.</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="moreinfo flex-xy">
+        <a routerLink="/expertise"><span>{{'EN SAVOIR PLUS'}}</span></a>
+    </div>
+    <div class="progress-slide">
+        <div class="inner">
+            <div id="jauge-1"></div>
+        </div>
+       <input type="text" id="input-jauge-1">
+    </div>
+    <img alt="CLOUD">
+    </section>
+
+    <section class="fourth flex-around">
+    <div class="hder">
+        <span>Du monolithe à l’océan bleu technologique <br>Ils nous ont fait confiance !</span>
+    </div>
+    <div class="bder">
+            <div class="cts">
+                <img alt="IMG">
+            </div>    
+            <div class="gliss">
+                    <div class="slick-i">
+                        <div class="itm-i">
+                            <img src="../../../../assets/img/MAIF.svg" alt="">
+                        </div>
+                        <div class="itm-i">
+                            <img src="../../../../assets/img/PWC.svg" alt="">
+                        </div>
+                        <div class="itm-i">
+                            <img src="../../../../assets/img/BNP.svg" alt="">
+                        </div>
+                        <div class="itm-i">
+                            <img src="../../../../assets/img/France Médias Monde.svg" alt="">
+                        </div>
+                        <div class="itm-i">
+                            <img src="../../../../assets/img/Luxembourg.svg" alt="">
+                        </div> 
+                        <div class="itm-i">
+                            <img src="../../../../assets/img/Swisslife.svg" alt="">
+                        </div> 
+                        <div class="itm-i">
+                            <img src="../../../../assets/img/Natixis.svg" alt="">
+                        </div>
+                        <div class="itm-i">
+                            <img src="../../../../assets/img/Orange.svg" alt="">
+                        </div>
+                        <div class="itm-i">
+                            <img src="../../../../assets/img/Hermès.svg" alt="">
+                        </div>
+                    </div>
+            </div> 
+
+            <img src="../../../../assets/img/Success.png" alt="Success" class="success">
+    </div>
+    </section>
+
+    <section class="fifth flex-around">
+    <img alt="CLOUD">
+    <div class="parallax" data-parallax>
+        <div class='stars'></div>
+        <div class='stars2'></div>
+        <div class='stars3'></div>
+    </div>
+    <div class="hder">
+        <div class="flex-xy">
+            <img src="../../../../assets/img/Beblio.svg" alt="">
+        </div>
+        <span class="border"></span>
+       <div>
+            <span>Nos experts vous livrent <br>les clés du succès</span>
+       </div>
+    </div>
+    <div class="der">
+          <div class="slider-ctn">
+            <div class="item blue">
+                <div class="flex-y"><span>{{"TRAININGS"}}</span>
+                    <span>Cas pratiques, expériences, <br>formations…</span>
+                    <em  class="fas fa-chevron-circle-right"></em> 
+                    <a [routerLink]="['/bebliotheque/trainings']"><span>{{"Voir tous les articles"}}</span></a> 
+                </div>
+            </div>
+            <div class="item article">
+                <div>
+                    <img [src]="trainings[0]?.feature_image" alt="ARTICLE" > 
+                    <div class="ctv"> 
+                        <span>{{trainings[0]?.title}}</span> 
+                        <span>DevOps | {{trainings[0]?.created_at | date:'mediumDate':'fr'}}</span>
+                    </div>
+               </div>
+            </div>
+            <div class="item green">
+                <div class="flex-y"><span>{{"CLOUD ENGINEERING"}}</span>
+                    <span>DevSecOps, Data, IA & ML, <br>Trainings …</span>
+                    <em  class="fas fa-chevron-circle-right"></em>
+                    <a [routerLink]="['/bebliotheque/cloud-engineering']"><span>{{"Voir tous les articles"}}</span></a>    
+                </div>
+            </div>
+            <div class="item article"><div>
+                <img [src]="cloudengs[0]?.feature_image" alt="ARTICLE"> 
+                <div class="ctv"> 
+                    <span>{{cloudengs[0]?.title}}</span> 
+                    <span>DevOps | {{cloudengs[1]?.created_at | date:'mediumDate':'fr'}}</span>
+                </div>
+            </div></div>
+            <div class="item yellow">
+                <div class="flex-y"><span>{{"WIKIBEDIA"}}</span>
+                    <span>Outils, Concepts clés, metiers</span>
+                    <em  class="fas fa-chevron-circle-right"></em>  
+                    <a [routerLink]="['/bebliotheque/wikibedia']"><span>{{"Voir tous les articles"}}</span></a>
+                </div>
+            </div>
+            <div class="item article">
+                <div>
+                    <img [src]="wikibedia[2]?.feature_image" alt="ARTICLE"> 
+                    <div class="ctv"> 
+                        <span>{{wikibedia[2]?.title}}</span> 
+                        <span>{{'DevOps'}} | {{wikibedia[2]?.created_at| date:'mediumDate':'fr' }}</span>
+                    </div>
+               </div>
+            </div>
+            <div class="item red">
+                <div class="flex-y"><span>{{"ACTUALITES"}}</span>
+                    <span>{{"BeOpenIT life, learnings & events"}}</span>
+                    <em  class="fas fa-chevron-circle-right"></em>  
+                    <a [routerLink]="['/bebliotheque/news']"><span>{{"Voir tous les articles"}}</span></a>
+                </div>
+            </div>
+            <div class="item article">
+                <div>
+                    <img src="" alt="ARTICLE"> 
+                    <div class="ctv"> 
+                        <span>CNCF survey 2021 : Les<br> chiffres clés</span> 
+                        <span>DevOps I 16 Novembre 2021</span>
+                    </div>
+               </div>
+            </div>
+          </div>
+          <div class="progress-slide">
+            <div class="inner">
+                <div id="jauge-2"></div>
+            </div>
+           <input type="text" id="input-jauge-2">
+          </div>
+    </div>
+    <img alt="CLOUD">
+    </section>
+
+    <section class="sixth flex-around">
+        <div class="hder">
+            <img alt="R.O.I">
+        </div>
+        <div class="der flex-y">
+            <span>{{"COMMENT POUVONS-NOUS VOUS AIDER ?"}}</span>
+            <span>{{"Partagez-nous vos défis numériques. Nos experts BeOpen IT vous aideront à dynamiser vos activités en tirant pleinement parti des technologies les plus adaptées à vos cas d’usages."}}</span>
+            <a routerLink="/contact"><span>{{'CONTACTS'}}</span></a>
+        </div>
+    </section>
+    <app-footer></app-footer>
+</div>
+
+<button class="contact flex-y" (click)="redirectTo('contact')">
+    <img src="../../../assets/img/email.svg" alt="">
+    <span>{{'Contacts'}}</span>
+</button>

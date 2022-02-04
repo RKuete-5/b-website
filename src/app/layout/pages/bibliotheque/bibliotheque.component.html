@@ -1,0 +1,43 @@
+<div class="comh">
+  <nav>
+    <div class="contd">
+          <button (click)="toggleMobileNav()">
+            <div class="nav-icon" [ngClass]="{'open': open == true}">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+            <div class="logo">
+              <a (click)="directTo('/bebliotheque')">
+                <img alt="LOGO">
+              </a>
+            </div>
+            <div class="menus">
+                    <a routerLink="/bebliotheque/trainings" routerLinkActive="active-tr"><span>Trainings</span></a>
+                    <a routerLink="/bebliotheque/cloud-engineering" routerLinkActive="active-cl"><span>Cloud engineering</span></a>
+                    <a routerLink="/bebliotheque/wikibedia" routerLinkActive="active-wi"><span>Wikibedia</span></a>
+                    <a routerLink="/bebliotheque/news" routerLinkActive="active-nw"><span>Actualités</span></a>
+                    <a routerLink="/bebliotheque/cno" routerLinkActive="active-cn"><span>CNO</span></a>
+            </div>
+            <a routerLink="/"><i class="bi bi-house-fill"></i></a>  
+    </div>
+    <div class="scroll-progress">
+      <!-- <div [style]="'width:'+ '34%'"></div> -->
+    </div>
+    <div class="mobile-menus" [ngClass]="{'open': open == true}">
+        <a (click)="directTo('/bebliotheque/trainings')"><span>Trainings</span></a>
+        <a (click)="directTo('/bebliotheque/cloud-engineering')"><span>Cloud engineering</span></a>
+        <a (click)="directTo('/bebliotheque/wikibedia')"><span>Wikibedia</span></a>
+        <a (click)="directTo('/bebliotheque/news')"><span>Actualités</span></a>
+        <a (click)="directTo('/bebliotheque/cno')"><span>CNO</span></a>
+    </div>
+    <a class="return-h" routerLink="/">
+        <em class="bi bi-house-fill"></em>
+        <span>Retourner sur BeOpen IT</span>
+    </a>
+  </nav>
+  <div class="_main-b">
+      <router-outlet></router-outlet>
+  </div>
+</div>

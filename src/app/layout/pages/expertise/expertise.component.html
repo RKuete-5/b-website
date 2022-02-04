@@ -1,0 +1,673 @@
+<div
+  class="comh"
+  scrollpy
+  [spiedTags]="['SECTION']"
+  (sectionChange)="onSectionChange($event)"
+  (scroll)="onScroll($event)"
+>
+  <app-header [status]="true"></app-header>
+  <div class="sub-nav">
+    <div class="ctner">
+      <div class="direction">
+        <a
+          (click)="scrollTo('banner')"
+          [ngClass]="{
+            current: currentSection != 'banner' && currentSection != undefined
+          }"
+          ><em class="fas fa-arrow-up"></em
+        ></a>
+      </div>
+      <div class="menus">
+        <a
+          (click)="scrollTo('services')"
+          class="nv-se"
+          [ngClass]="{ current: currentSection == 'services' }"
+        >
+          <span>Services</span>
+        </a>
+        <a
+          (click)="scrollTo('methodologie')"
+          class="nv-se"
+          [ngClass]="{ current: currentSection == 'methodologie' }"
+        >
+          <span>Méthodologie</span>
+        </a>
+        <a
+          (click)="scrollTo('expertise')"
+          class="nv-se"
+          [ngClass]="{ current: currentSection == 'expertise' }"
+        >
+          <span>Expertises</span>
+        </a>
+        <a
+          (click)="scrollTo('excellence')"
+          class="nv-se"
+          [ngClass]="{ current: currentSection == 'excellence' }"
+        >
+          <span>Excellence</span>
+        </a>
+        <a
+          (click)="scrollTo('contact')"
+          class="nv-se"
+          [ngClass]="{ current: currentSection == 'contact' }"
+        >
+          <span>Contacts</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <section id="banner" class="banner">
+    <img class="second" alt="HOST" />
+    <img class="third" alt="CLOUD" />
+    <div class="parallax" data-parallax>
+      <div class="stars"></div>
+      <div class="stars2"></div>
+      <div class="stars3"></div>
+    </div>
+  </section>
+  <section id="services" class="services">
+    <div class="hd-o">
+      <span>SERVICES CLOUD</span>
+      <span>Accélérons votre migration vers le cloud,</span>
+      <span><strong>grâce aux hommes et femmes derrière la machine.</strong></span>
+      <span
+        >En réunissant les pratiques les plus avancées de DevSecOps,
+        CyberSécurité, et Data, nous vous aidons à accélérer et soutenir votre
+        migration vers le cloud durablement en développant des solutions cloud
+        adaptées à vos cas d'usage.</span
+      >
+    </div>
+    <div class="bd-o">
+      <div class="indexer">
+        <a class="s-prev">
+          <em class="bi bi-chevron-left"></em>
+        </a>
+        <input type="text" id="input-svc">
+        <a class="s-next">
+          <em class="bi bi-chevron-right"></em>
+        </a>
+      </div>
+      <div class="vv-1">
+        <div class="item green">
+          <div class="inner">
+            <div class="circle"></div>
+            <div class="content">
+              <span>SÉCURISATION</span>
+              <span>
+                Notre mission est de vous fournir des environnements résilients
+                et une expérience utilisateur 100% sécurisée en intégrant les
+                meilleures pratiques de sécurité dans tout le cycle de vie de
+                vos applications.
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="item yellow">
+          <div class="inner">
+            <div class="circle"></div>
+            <div class="content">
+              <span>AUTOMATISATION</span>
+              <span
+                >Nous vous aidons à renforcer la fiabilité de vos environnements
+                et votre proposition de valeur par l’automatisation et la
+                normalisation de vos opérations. En quelques mots : déploiement,
+                productivité, scalabilité… en continu !</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="item red">
+          <div class="inner">
+            <div class="circle"></div>
+            <div class="content">
+              <span>OPTIMISATION</span>
+              <span
+                >Via un monitoring consciencieux, nous assurons une distribution
+                juste des ressources lors de l'exécution de vos opérations.
+                Objectif : 0 gaspillage, 0 downtime.</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="item dark">
+          <div class="inner">
+            <div class="circle"></div>
+            <div class="content">
+              <span>ADOPTION</span>
+              <span>
+                Nos accompagnateurs et formateurs s’appliquent à soutenir votre
+                plan d’adoption cloud sur toute votre échelle organisationnelle.
+                Par la formation et la transmission, nous soutenons une
+                transition collective, gage d’un succès durable.
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="item blue">
+          <div class="inner">
+            <div class="circle"></div>
+            <div class="content">
+              <span>INTEGRATION</span>
+              <span
+                >Avec une visibilité totale de votre infrastructure et une
+                collaboration transparente avec vos équipes, nous agissons à la
+                création et à l’intégration de produits et frameworks agilesen
+                considérant votre marché et les évolutions technologiques.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="methodologie" class="methodologie">
+    <div class="hd-o">
+      <span>METHODOLOGIE</span>
+      <span>De l'information à l'intelligence,</span>
+      <span><strong>de la connaissance à la décision.</strong></span>
+      <span
+        >Dès le départ, nous travaillons conjointement avec vos équipes. Des
+        workshops aux sprints, nous cultivons une intelligence collective qui
+        transpose les codes vers une culture cloud créatrice de valeur.</span
+      >
+    </div>
+    <div class="bd-o">
+      <div class="indexer">
+        <a class="m-prev">
+          <em class="bi bi-chevron-left"></em>
+        </a>
+        <input type="text" id="input-method">
+        <a class="m-next">
+          <em class="bi bi-chevron-right"></em>
+        </a>
+      </div>
+      <div class="vv-2">
+        <div class="item green">
+          <div class="inner">
+            <div class="circle"></div>
+            <div class="content">
+              <span>AGILE IMPLEMENTATION TO MVP</span>
+              <span>
+                La phase de développement du MVP est animée par des Sprints, des
+                ateliers d’onboarding, de formations. L’objectif est d’impliquer
+                toutes les parties prenantes et d’ancrer les méthodes Agiles qui
+                soutiendrons vos efforts dans le temps.</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="item yellow">
+          <div class="inner">
+            <div class="circle"></div>
+          <div class="content">
+            <span>GROWTH TO PRODUCTION</span>
+            <span
+              >Lorsque les résultats sont en parfait accord avec les objectifs
+              fixés, nous développons et intégrons le produit final à votre
+              infrastructure. Formées, vos équipes se familiarisent avec votre
+              culture cloud. Enfin et très important, prenez le temps de fêter
+              avec votre équipe cette belle réussite !</span
+            >
+          </div>
+          </div>
+        </div>
+        <div class="item red">
+          <div class="inner">
+           <div class="circle"></div>
+           <div class="content">
+             <span>SUCCESS, WHAT’S NEXT ?</span>
+             <span
+               >Vous procurer un produit flexible est extrêmement important. En
+               nous tenant informés de vos résultats et des évolutions
+               technologiques, nous sommes aptes à apporter les modifications
+               et/ou nouveaux composants souhaités tout au long de notre
+               collaboration.</span
+             >
+           </div>
+          </div>
+         </div>
+        <div class="item blue">
+         <div class="inner">
+          <div class="circle"></div>
+          <div class="content">
+            <span>DESIGN THINKING TO POC</span>
+            <span
+              >Cette phase d’audit, nous permet de révéler tous les pans,
+              parfois insoupçonnées, de votre infrastructure et de vos
+              applications… De ces informations, nous établissons ensemble un
+              plan viable jusqu’à la conception et la mise en essai d’un
+              POC.</span
+            >
+          </div>
+         </div>
+        </div>
+
+       
+      </div>
+    </div>
+  </section>
+  <section id="expertise" class="expertises">
+    <div class="hd-o">
+      <span>DOMAINES D'EXPERTISE</span>
+      <span
+        >4 corps de métier conjoints, <br />
+        <strong>pour une transition viable, agile et rentable.</strong>
+      </span>
+    </div>
+    <div class="bd-o">
+      <div class="parallax" data-parallax>
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+      </div>
+      <img class="first" alt="CLOUD" />
+      <img class="second" alt="CLOUD" />
+      <div class="sdl-midd">
+        <div class="item-o">
+          <div class="inner">
+            <img
+              src="../../../../assets/img/blue.svg"
+              alt="PUZZLE"
+              class="puzzle"
+            />
+            <div class="contnt">
+              <span
+                >LES <strong style="color: #517bbd">GÉNIES</strong> DE
+                L’INNOVATION CONTINUE</span
+              >
+              <span
+                >Un time market réduit, un SI agile, une expérience utilisateur
+                optimale. En diffusant la culture DevOps au cœur de vos
+                opérations, nous achevons ces objectifs par l’automatisation et
+                la sécurisation de vos cycles développement.</span
+              >
+              <div class="checkpoints">
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #517bbd"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span
+                      >Applications Legacy to applications « Cloud Native
+                      »</span
+                    >
+                  </div>
+                  <div>
+                    <em
+                      style="color: #517bbd"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Agile Development Stack</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #517bbd"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Microservices, Serverless …</span>
+                  </div>
+                  <div>
+                    <em
+                      style="color: #517bbd"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Auto-scaling, Auto-healing</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #517bbd"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Monitoring and Logging</span>
+                  </div>
+                  <div>
+                    <em
+                      style="color: #517bbd"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>CI & CD pipeline management</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item-o">
+          <div class="inner">
+            <img
+              src="../../../../assets/img/green.svg"
+              alt="PUZZLE"
+              class="puzzle"
+            />
+            <div class="contnt">
+              <span
+                >LES <strong style="color: #1a9e59">GARDIENS</strong> D'UN R.O.I
+                POSITIF</span
+              >
+              <span
+                >La sécurité imprègne toutes vos problématiques. Avec vous, nous
+                œuvrons à la production d’une infrastructure résiliente et
+                d’environnements utilisateurs sécurisés en intégrant les
+                techniques les plus avancées dans tout le cycle de vie de vos
+                applications.</span
+              >
+              <div class="checkpoints">
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #1a9e59"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>
+                      Évaluation et définition du champ d’application</span
+                    >
+                  </div>
+                  <div>
+                    <em
+                      style="color: #1a9e59"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span> Evaluation des risques</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #1a9e59"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Gouvernance application</span>
+                  </div>
+                  <div>
+                    <em
+                      style="color: #1a9e59"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Compliance application</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #1a9e59"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Policy application</span>
+                  </div>
+                  <div>
+                    <em
+                      style="color: #1a9e59"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Automatisation CI/CD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item-o">
+          <div class="inner">
+            <img
+              src="../../../../assets/img/yellow.svg"
+              alt="PUZZLE"
+              class="puzzle"
+            />
+            <div class="contnt">
+              <span
+                >VOS <strong style="color: #f2b229">FUTURES</strong> MEILLEURES
+                DÉCISIONS</span
+              >
+              <span
+                >Grand défis du 21ème siècle, la donnée pilote vos opérations
+                stratégiques. Notre mission est de vous fournir une data
+                contextualisée, enrichie, et opportune en sensibilisant vos
+                équipes à la création de workflow Agiles et
+                ultra-simplifiés.</span
+              >
+              <div class="checkpoints">
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #f2b229"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span> TLS Serverless (automatisation)</span>
+                  </div>
+                  <div>
+                    <em
+                      style="color: #f2b229"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span> Système de recommandation</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #f2b229"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Détection des fraudes</span>
+                  </div>
+                  <div>
+                    <em
+                      style="color: #f2b229"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Sentiment Analysis</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #f2b229"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Unification de workflow Data</span>
+                  </div>
+                  <div>
+                    <em
+                      style="color: #f2b229"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Gouvernance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item-o">
+          <div class="inner">
+            <img
+              src="../../../../assets/img/red.svg"
+              alt="PUZZLE"
+              class="puzzle"
+            />
+            <div class="contnt">
+              <span
+                >UNE<strong style="color: #db4538"> ÉQUIPE</strong> FORMÉE,
+                AUTONOME & CERTIFIÉE</span
+              >
+              <span
+                >Au-delà de notre accompagnement de terrain, nous vous aidons à
+                maintenir le cap en ancrant durablement les Hards et softs
+                skills nécessaires à la réussite de vos use cases Kubernetes via
+                un parcours de formations certifié et certifiant.</span
+              >
+              <div class="checkpoints">
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #db4538"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span> Certified Kubernetes Administratord (CKA)</span>
+                  </div>
+                  <div>
+                    <em
+                      style="color: #db4538"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>
+                      Certified Kubernetes Application Developer (CKAD)</span
+                    >
+                  </div>
+                </div>
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #db4538"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Kubernetes advanced</span>
+                  </div>
+                  <div>
+                    <em
+                      style="color: #db4538"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Kubernetes fundamentals</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div>
+                    <em
+                      style="color: #db4538"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Certified Kubernetes Security (CKS)</span>
+                  </div>
+                  <div>
+                    <em
+                      style="color: #db4538"
+                      class="bi bi-check-circle-fill"
+                    ></em>
+                    <span>Kubernetes in production</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="progress-slide">
+        <div class="inner">
+            <div id="jauge-3"></div>
+        </div>
+       <input type="text" id="input-jauge-3">
+      </div>
+    </div>
+  </section>
+  <section id="excellence" class="excellence">
+    <div class="hd-o">
+      <span>Excellence</span>
+      <span><strong>Pourquoi nous faire confiance ?</strong></span>
+      <span
+        >Passionnés et ambitieux, nous repoussons les limites du possible pour
+        vous proposer des solutions cloud optimales qui associent et/ou
+        réconcilient l'Homme et la machine.</span
+      >
+    </div>
+    <div class="bd-o">
+      <!-- clients slider -->
+      <div class="item-slider">
+        <div class="slider-title">
+          <span><strong>> Une expertise éprouvée sur le terrain</strong></span>
+          <div class="pav">
+              <a class="client-prev">
+                <em class="bi bi-chevron-left"></em>
+              </a>
+              <a class="client-next">
+                <em class="bi bi-chevron-right"></em>
+              </a>
+          </div>
+        </div>
+        <div class="slider-body">
+          <div class="slick-client">
+            <div class="itm" *ngFor="let item of expertiseTerrain">
+              <img [src]="item?.img" alt="" />
+              <a>{{item?.label}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="item-slider">
+        <div class="slider-title">
+          <span><strong>> Une expertise reconnue</strong></span>
+          <div class="pav">
+            <a class="certified-prev">
+              <em class="bi bi-chevron-left"></em>
+            </a>
+            <a class="certified-next">
+              <em class="bi bi-chevron-right"></em>
+            </a>
+        </div>
+        </div>
+        <div class="slider-body">
+          <div class="slick-certified">
+            <div class="itm" *ngFor="let item of expertiseReconnue">
+              <img [src]="item?.img" alt="" />
+              <a>{{item?.label}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Partners -->
+      <div class="item-slider">
+        <div class="slider-title ">
+          <span><strong>> Des partenaires d'excellence</strong></span>
+          <div class="pav">
+            <a class="partener-prev">
+              <em class="bi bi-chevron-left"></em>
+            </a>
+            <a class="partener-next">
+              <em class="bi bi-chevron-right"></em>
+            </a>
+        </div>
+        </div>
+        <div class="slider-body">
+          <div class="slick-partener">
+            <div class="itm" *ngFor="let item of partenaires">
+              <img [src]="item?.img" alt="" />
+              <a>{{item?.label}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="contacts">
+    <img alt="CLOUD" class="cloud" />
+    <div class="parallax" data-parallax>
+      <div class="stars"></div>
+      <div class="stars2"></div>
+      <div class="stars3"></div>
+    </div>
+    <div class="c-hd">
+      <span>DISCUTONS DÈS AUJOURD'HUI</span>
+      <span>COMMENT POUVONS-NOUS VOUS AIDER ?</span>
+      <span
+        >Faites-nous part des défis des votre entreprise et nos experts BeOpenIT
+        vous aideront à dynamiser votre activité grâce aux meilleurs des
+        technologies cloud actuelles ... tout en un oeil sur ce qui se profile à
+        l'horizon.</span
+      >
+    </div>
+    <div class="c-bd">
+      <img alt="HUMAN-COMMENT" />
+      <div class="box">
+        <hspot-form></hspot-form>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,337 @@
+<div class="comh" scrollpy [spiedTags]="['SECTION']" (sectionChange)="onSectionChange($event)" (scroll)="onScroll($event)">
+    <app-header [status]="true"></app-header>
+    <div class="sub-nav">
+        <div class="ctner">
+            <div class="direction">
+                <a (click)="scrollTo('banner')" [ngClass]="{'rotate': currentSection != 'banner' && currentSection != undefined }"><em class="fas fa-arrow-up"></em></a>
+            </div>
+            <div class="menus">
+                <div class="stick-lig"></div>
+                <a (click)="scrollTo('service')" class="nv-se" [ngClass]="{'activeSection': currentSection == 'service'}">
+                    <span>Services</span>
+                </a>
+                <a (click)="scrollTo('catalogue')" class="nv-se" [ngClass]="{'activeSection': currentSection == 'catalogue'}">
+                    <span>Catalogue</span>
+                </a>
+                <a (click)="scrollTo('parcours')" class="nv-se" [ngClass]="{'activeSection': currentSection == 'parcours'}">
+                    <span>Parcours</span>
+                </a>
+                <a (click)="scrollTo('temoignages')" class="nv-se" [ngClass]="{'activeSection': currentSection == 'temoignages'}">
+                    <span>Témoignages</span>
+                </a>
+                 <a (click)="scrollTo('contact')" class="nv-se" [ngClass]="{'activeSection': currentSection == 'contact'}">
+                    <span>Contacts</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <section class="banner" id="banner">
+        <div class="lbl">
+           <img src="../../../../assets/img/banner-word.svg" alt="">
+        </div>
+        <img alt="FORMATION" class="pzl">
+        <img alt="CLOUD" class="lst">
+        <div class="parallax" data-parallax>
+            <div class='stars'></div>
+            <div class='stars2'></div>
+            <div class='stars3'></div>
+        </div>
+    </section>
+    <section class="service" id="service">
+        <div class="l-fir">
+            <div class="desc-img">
+                <img src="../../../../assets/img/linx.svg" alt="">
+                <img src="../../../../assets/img/k8s.svg" alt="">
+            </div>
+            <span></span>
+            <div class="desc">
+                <!-- <span>Nos formations sont certifiées par la Linux fondation et nos formateurs certifiées Kubernetes training Partners.</span> -->
+                <span>1er entreprise Franco-Africaine reconnue “Kubernetes Trainings partner"</span>
+            </div>
+        </div>
+        <div class="l-sec">
+            <span>SERVICES</span>
+            <span>Enrichissez votre capital humain, <br> rendons vos efforts durables.</span>
+            <span>Vos projets Kubernetes sont complexes, vos objectifs difficilement atteignables. C’est normal. Kubernetes est jeune, Kubernetes est complexe. Guidées par nos formateurs multi-certifiés, vos unités gagneront en autonomie par l’acquisition des compétences nécessaires pour mettre et maintenir vos environnements en production jusqu’à l’obtention de certifications reconnues.
+            </span>
+        </div>
+        <div class="l-thr">
+            <div class="forma-slider">
+                    <div class="f-item" *ngFor="let item of formationTypes; let index = i">
+                           <div class="inner">
+                            <div class="hdr">
+                                   <img [src]="item?.img" alt="FORMATION">
+                            </div>
+                            <div class="title">
+                                <span>{{item?.title}}</span>
+                            </div>
+                            <div class="describ">
+                                <span>{{item?.description}}</span>
+                            </div>
+                           </div>
+
+                    </div>
+            </div>
+        </div>
+    </section> 
+    <section class="catalogue" id="catalogue">
+        <div class="in-hd">
+            <span>CATALOGUE</span>
+            <span>COMMENCEZ AU BON NIVEAU</span>
+            <span>Toutes nos formations BeOpen IT et Linux Foundation.</span>
+            <img alt="OPENBOOK">
+        </div>
+        <div class="in-bd">
+            <div>
+                <span>Partagez le catalogue facilement !</span>
+                <button (click)="choose()">
+                    <span>TÉLÉCHARGER ICI</span>
+                    <em class="bi bi-download"></em>
+                </button>
+            </div>
+            <div>
+                <img  alt="FORMATION-DOC">
+            </div>
+        </div>
+        <div class="in-other">
+            <div class="row">
+                <div class="col-md-6" *ngFor="let item of formations; let i = index">
+                    <div class="item">
+                                <div class="cd-tag"><span>{{item?.tag}}</span></div>
+                                <div class="c-c">
+                                    <div class="cd-header">
+                                        <img [src]="item?.icon" class="icon" alt="ICON">
+                                        <div class="title">
+                                            <span>{{item?.title}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="cd-body">
+                                        <div class="descrb">
+                                            <span>{{item?.description}}</span>
+                                        </div>
+                                        <div class="options">
+                                            <div *ngFor="let chk of item?.details; let i= index">
+                                                <span><em class="bi bi-check"></em></span>
+                                                <span>{{chk?.label}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cd-footer">
+                                        <span>À partir de </span><span>{{item?.price}}</span>
+                                        <a class="action-p" routerLink="/contact">
+                                            <span>Programmer</span> 
+                                            <em class="bi bi-chevron-right"></em>
+                                        </a>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="download">
+                        <img src="../../../../assets/img/Catalogue (300p).png" alt="">
+                        <button (click)="choose()">
+                            <span>TÉLÉCHARGER ICI</span>
+                            <em class="bi bi-download"></em>
+                        </button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+     <section class="parcours" id="parcours">
+        <div class="on-hd">
+            <span>PARCOURS</span>
+            <span>Votre parcours sur-mesure <br>comment ça marche ?</span>
+            <span>Pour vous présenter une offre de formation idéale, nous tenons compte de vos besoins et de vos contraintes. Nous considérons le niveau de chaque participant avec attention pour assurer un accompagnement qui leur permettra d’atteindre les objectifs fixés.</span>
+        </div>
+        <div class="on-bd">
+            <div class="li-one">
+                <div>
+                    <span>LOGISTIQUE</span>
+                </div>
+                <div>
+                    <span>ASSISTANCE</span>
+                </div>
+                <div>
+                    <span>FORMULE</span>
+                </div>
+            </div>
+            <div class="li-two">
+                <div>
+                    <em class="bi bi-check-circle-fill"></em>
+                    <span>Formation présentielle <br> Dans vos locaux ou les nôtres</span>
+                </div>
+                <div>
+                    <em class="bi bi-check-circle-fill"></em>
+                    <span>Formateurs spécialisés <br> DevOps, Sécurité, Data …</span>
+                </div>
+                <div>
+                    <em class="bi bi-check-circle-fill"></em>
+                    <span>Formule simple <br> formations k8s au choix</span>
+                </div>
+            </div>
+            <div class="li-th">
+                <div>
+                    <em class="bi bi-check-circle-fill"></em>
+                    <span>Formation distancielle <br> Selon vos contraintes géographiques</span>
+                </div>
+                <div>
+                    <em class="bi bi-check-circle-fill"></em>
+                    <span>Accès E-Learning Linux <br>Selon les formations choisies</span>
+                </div>
+                <div>
+                    <em class="bi bi-check-circle-fill"></em>
+                    <span>Formule entraînement <br> formations + e-learning</span>
+                </div>
+            </div>
+            <div class="li-qt">
+                <div>
+                    <em class="bi bi-check-circle-fill"></em>
+                    <span>Formation hybride <br> Un fin mélange des deux</span>
+                </div>
+                <div>
+                    <em class="bi bi-check-circle-fill"></em>
+                    <span>Suivi individuel <br>Contacts et échanges personnels</span>
+                </div>
+                <div>
+                    <em class="bi bi-check-circle-fill"></em>
+                    <span>Formule complète <br> formations + e-learning + examen</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="on-bd-mob">
+          <div class="bloc">
+            <div class="line">
+                <span>LOGISTIQUE</span>
+            </div>
+            <div class="line">
+                <em class="bi bi-check-circle-fill"></em>
+                <span>Formation présentielle <br> Dans vos locaux ou les nôtres</span>
+            </div>
+            <div class="line">
+                <em class="bi bi-check-circle-fill"></em>
+                <span>Formation distancielle <br> Selon vos contraintes géographiques</span>
+            </div>
+            <div class="line">
+                <em class="bi bi-check-circle-fill"></em>
+                <span>Formation hybride <br> Un fin mélange des deux</span>
+            </div>
+          </div>
+          <div class="bloc">
+            <div class="line">
+                <span>ASSISTANCE</span>
+            </div>
+            <div class="line">
+                <em class="bi bi-check-circle-fill"></em>
+                <span>Formateurs spécialisés <br> DevOps, Sécurité, Data …</span>
+            </div>
+            <div class="line">
+                <em class="bi bi-check-circle-fill"></em>
+                <span>Accès E-Learning Linux <br>Selon les formations choisis</span>
+            </div>
+            <div class="line">
+                <em class="bi bi-check-circle-fill"></em>
+                <span>Suivi individuel <br>Contacts et échanges personnels</span>
+            </div>
+          </div>
+          <div class="bloc">
+            <div class="line">
+                <span>FORMULE</span>
+            </div>
+            <div class="line">
+                <em class="bi bi-check-circle-fill"></em>
+                <span>Formule simple <br> formations k8s au choix</span>
+            </div>
+            <div class="line"> <em class="bi bi-check-circle-fill"></em>
+                <span>Formule entraînement <br> formations + e-learning</span>
+            </div>
+            <div class="line">
+                <em class="bi bi-check-circle-fill"></em>
+                <span>Formule complète <br> formations + e-learning + examen</span>
+            </div>
+          </div>
+          
+        </div>
+        <div class="on-fd">
+            <div class="notify">
+                    <em class="bi bi-exclamation-circle"></em>
+                    <span>Vous profitez d’avantages tarifaires selon le nombre de candidats inscrits et de formations demandées.</span>
+            </div>
+        </div>
+    </section>
+    <section class="temoignages" id="temoignages">
+        <div class="i-hd">
+            <span>Témoignages</span>
+            <span>QU’EN DISENT LES INGÉNIEURS FORMÉS</span>
+            <span>… et maintenant certifiés ?</span>
+        </div>
+        <div class="i-bd">
+            <div class="testi-slick">
+                <div class="cont-item" *ngFor="let item of comments">
+                    <div class="item">
+                        <div class="hd">
+                            <div class="circle">
+                                <img alt="ICON">
+                            </div>
+                           <div class="likes">
+                            <em class="bi bi-heart-fill" style="color: #DB4537;"  *ngFor="let note of [].constructor(item?.note)"></em>
+                            <em class="bi bi-heart" *ngFor="let note of [].constructor(5 - item?.note)"></em>
+                           </div>
+                        </div>
+                        <div class="bd">
+                            <div>
+                                <span>{{item?.name}}</span>
+                                <span>{{item?.fonction}}</span>
+                            </div>
+                            <div>
+                                <span>{{item?.avis}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <img  alt="CLOUD" class="fst">
+        <div class="c-hd">
+            <span>DISCUTONS DE VOS BESOINS !</span>
+            <span>Notre responsable de formation, Alicia Mariette, répondra à toutes vos questions sans manquer <br>de vous transmettre le catalogue que vous pourrez partager à vos équipes !</span>
+        </div>
+        <div class="c-bd">
+            <img alt="HUMAN-COMMENT">
+            <div class="box">
+                    <hspot-form></hspot-form>
+            </div>
+        </div>
+        <div class="parallax" data-parallax>
+            <div class='stars'></div>
+            <div class='stars2'></div>
+            <div class='stars3'></div>
+        </div>
+    </section>
+    <app-footer></app-footer>
+</div>
+
+
+
+
+
+ <!-- Modal -->
+ <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+          <div class="content-h">
+            <button data-bs-dismiss="modal"><em class="bi bi-x"></em></button>
+            <div class="formulaire">
+                <app-catalogue (onSubmit)="getStatus($event)"></app-catalogue>
+            </div>
+            <div class="catalog">
+                <img  alt="CATALOGUE">
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  

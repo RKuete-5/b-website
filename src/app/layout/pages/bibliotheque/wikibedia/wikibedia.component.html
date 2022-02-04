@@ -1,0 +1,195 @@
+
+
+<div class="inner-c">
+    <div class="sub-nav">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a><span>{{'Wikibedia'}}</span></a></li>
+              <!-- <li class="breadcrumb-item active" aria-current="page"><span>{{posts}}</span></li> -->
+            </ol>
+          </nav>
+    </div>
+    <div class="content-mn">
+      <div class="side-b">
+          <div class="search-bar">
+              <div>
+                  <em class="bi bi-search"></em>
+                  <input type="text" placeholder="Mot cles">
+              </div>
+          </div>
+        <div class="category">
+            <div class="hd">
+                <span>CATEGORIES</span>
+            </div>
+            <div class="bd">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        DevOps
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Data, ML & IA
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                        Cybersécurité
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                    <label class="form-check-label" for="defaultCheck4">
+                        Solutions
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                    <label class="form-check-label" for="defaultCheck5">
+                        Entreprises
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+                    <label class="form-check-label" for="defaultCheck6">
+                        Langages
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+                    <label class="form-check-label" for="defaultCheck7">
+                        Concepts et methodes
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="popular">
+            <div class="hd">
+                <span>KEYWORDS</span>
+            </div>
+            <div class="bd">
+    
+            </div>
+        </div>
+      </div>
+      <div class="list-v">
+          <div class="inner">
+            <div class="row" *ngIf="posts?.length > 0">
+                <div class="col-md-4" *ngFor="let item of posts | paginate: {itemsPerPage: 16, currentPage: p}">
+                    <div class="card" (click)="goToArticle(item?.id)">
+                        <div class="card-header">
+                            <img [src]="item?.feature_image"alt="ARTICLE" >
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <span>Solution</span>
+                            </div>
+                            <div>
+                                <span>{{item?.title}}</span>
+                                <span>DevOps | {{item?.created_at | date:'mediumDate':'fr'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-empty *ngIf="posts?.length == 0"></app-empty>
+          </div>
+          <div class="navigation">
+            <pagination-controls (pageChange)="p = $event" autoHide="true"></pagination-controls>
+          </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+<div class="mobile-view">
+    <div class="sub-nav">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a><span>{{'Wikibedia'}}</span></a></li>
+              <!-- <li class="breadcrumb-item active" aria-current="page"><span>{{posts}}</span></li> -->
+            </ol>
+          </nav>
+    </div>
+    <div class="content-mn">
+        <div class="search">
+            <div>
+                <em class="bi bi-search"></em>
+                <input type="text" placeholder="Mot cles">
+            </div>
+        </div>
+        <div class="top">
+            <div class="category">
+                <div class="hd">
+                    <span>CATEGORIES</span>
+                </div>
+                <div class="bd">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            DevSecOps
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">
+                            Data, ML & IA
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">
+                            Cybersécurité
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                        <label class="form-check-label" for="defaultCheck4">
+                            Développement
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="list-v">
+                <div class="card" *ngFor="let item of posts | paginate: {itemsPerPage: 6, currentPage: p}" (click)="goToArticle(item?.id)">
+                    <div class="card-header">
+                        <img [src]="item?.feature_image"alt="ARTICLE" >
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <span>Solution</span>
+                        </div>
+                        <div>
+                            <span>{{item?.title}}</span>
+                            <span>DevOps | {{item?.created_at | date:'mediumDate':'fr'}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation">
+                <pagination-controls (pageChange)="p = $event" autoHide="true"></pagination-controls>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="tags">
+                <div class="hd">
+                    <span>TAGS</span>
+                </div>
+                <div class="bd">
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+
+<div class="loading" *ngIf="spin == true">
+    <em class="fas fa-dharmachakra fa-spin"></em>
+</div>

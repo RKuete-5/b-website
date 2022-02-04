@@ -1,0 +1,261 @@
+<div class="_cnt-0">
+    <div class="inner">
+        <div class="hd-0">
+            <span>A continuous Know-how.</span>
+            <span>#Humanempowerment</span>
+        </div>
+        <div class="bd-0">
+            <div class="line">
+                <div class="item-s blue">
+                    <span>TRAININGS</span>
+                    <span>Cas pratiques, experiences, formations ...</span>
+                    <a  [routerLink]="['trainings']"><span>Voir tous les articles</span></a>
+                 </div>
+                 <div class="item-a" (click)="goToTrain(trainings[0]?.id)">
+                    <img [src]="trainings[0]?.feature_image" alt="ARTICLE" >
+                    <div class="description">
+                        <span>{{trainings[0]?.title}}</span>
+                        <span>DevOps | {{trainings[0]?.created_at | date:'mediumDate':'fr'}}</span>
+                    </div>
+                </div>
+                <div class="item-a" (click)="goToTrain(trainings[1]?.id)">
+                    <img [src]="trainings[1]?.feature_image" alt="ARTICLE" >
+                    <div class="description">
+                        <span>{{trainings[1]?.title}}</span>
+                        <span>DevOps | {{trainings[1]?.created_at | date:'mediumDate':'fr'}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="item-a" (click)="goToCloudEng(cloudengs[0]?.id)">
+                    <img [src]="cloudengs[0]?.feature_image" alt="ARTICLE" >
+                    <div class="description">
+                        <span>{{cloudengs[0]?.title}}</span>
+                        <span>DevOps | {{cloudengs[0]?.created_at | date:'mediumDate':'fr'}}</span>
+                    </div>
+                </div>
+                <div class="item-a" (click)="goToCloudEng(cloudengs[1]?.id)">
+                    <img [src]="cloudengs[1]?.feature_image" alt="ARTICLE" >
+                    <div class="description">
+                        <span>{{cloudengs[1]?.title}}</span>
+                        <span>DevOps | {{cloudengs[1]?.created_at | date:'mediumDate':'fr'}}</span>
+                    </div>
+                </div>
+              
+                <div class="item-s green">
+                    <span>CLOUD ENGINEERING</span>
+                    <span>Les métiers de l’IT 360° : DevSecOps, Data, IA & ML…</span>
+                    <a [routerLink]="['cloud-engineering']"><span>Voir tous les articles</span></a>
+                 </div>
+            </div>
+            <div class="line">
+                <div class="item-s yellow">
+                    <span>WIKIBEDIA</span>
+                    <span>Le glossaire du cloud : outils, concepts clés, métiers…</span>
+                    <a [routerLink]="['wikibedia']"><span>Voir tous les articles</span></a>
+                 </div>
+                 <div class="item-a" (click)="goToWiki(wikibedia[1]?.id)">
+                    <img [src]="wikibedia[1]?.feature_image" alt="ARTICLE" >
+                    <div class="description">
+                        <span>{{wikibedia[1]?.title}}</span>
+                        <span>{{'DevOps'}} | {{wikibedia[1]?.created_at| date:'mediumDate':'fr' }}</span>
+                    </div>
+                </div>
+                <div class="item-a" (click)="goToWiki(wikibedia[2]?.id)">
+                    <img [src]="wikibedia[2]?.feature_image" alt="ARTICLE" >
+                    <div class="description">
+                        <span>{{wikibedia[2]?.title}}</span>
+                        <span>{{'DevOps'}} | {{wikibedia[2]?.created_at| date:'mediumDate':'fr' }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="item-a">
+                    <img src="" alt="ARTICLE" >
+                    <div class="description">
+                        <span>CNCF survey 2021 : Les</span>
+                        <span>DevOps | 16 Novembre 2021</span>
+                    </div>
+                </div>
+                <div class="item-a">
+                    <img src="" alt="ARTICLE" >
+                    <div class="description">
+                        <span>CNCF survey 2021 : Les</span>
+                        <span>DevOps | 16 Novembre 2021</span>
+                    </div>
+                </div>
+                <div class="item-s red">
+                    <span>ACTUALITÉS</span>
+                    <span>BeOpen IT life, learnings & events…</span>
+                    <a [routerLink]="['news']"><span>Voir tous les articles</span></a>
+                 </div>
+            </div>
+            <div class="line">
+                <div class="item-s cno">
+                    <span>CNO</span>
+                    <span>Actualités, mise à jours, composants…</span>
+                    <a [routerLink]="['cno']"><span>Voir tous les articles</span></a>
+                 </div>
+                 <div class="item-a">
+                    <img src="" alt="ARTICLE" >
+                    <div class="description">
+                        <span>CNCF survey 2021 : Les</span>
+                        <span>DevOps | 16 Novembre 2021</span>
+                    </div>
+                </div>
+                <div class="item-a">
+                    <img src="" alt="ARTICLE" >
+                    <div class="description">
+                        <span>CNCF survey 2021 : Les</span>
+                        <span>DevOps | 16 Novembre 2021</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bd-1">
+            <div class="line">
+                <div class="item">
+                    <div class="sm blue">
+                        <span>TRAININGS</span>
+                        <span>Cas pratiques, experiences, formations ...</span>
+                        <a  [routerLink]="['trainings']"><span>Voir tous les articles</span></a>    
+                    </div>
+                </div>  
+                <div class="item"  (click)="goToTrain(trainings[0]?.id)">
+                    <div class="am">
+                        <img [src]="trainings[0]?.feature_image" alt="ARTICLE" >
+                        <div class="description">
+                            <span>{{trainings[0]?.title}}</span>
+                            <span>DevOps | {{cloudengs[1]?.created_at | date:'mediumDate':'fr'}}</span>
+                        </div>
+                    </div>      
+                </div>      
+                
+                <div class="item"  (click)="goToTrain(trainings[1]?.id)">
+                    <div class="am">
+                        <img [src]="trainings[1]?.feature_image" alt="ARTICLE" >
+                        <div class="description">
+                            <span>{{trainings[1]?.title}}</span>
+                            <span>DevOps | {{cloudengs[1]?.created_at | date:'mediumDate':'fr'}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="item">
+                    <div class="sm green">
+                        <span>CLOUD ENGINEERING</span>
+                        <span>Les métiers de l’IT 360° : DevSecOps, Data, IA & ML…</span>
+                        <a [routerLink]="['cloud-engineering']"><span>Voir tous les articles</span></a>    
+                    </div>
+                </div>
+                <div class="item" (click)="goToCloudEng(cloudengs[0]?.id)">
+                    <div class="am">
+                        <img [src]="cloudengs[0]?.feature_image" alt="ARTICLE" >
+                        <div class="description">
+                            <span>{{cloudengs[0]?.title}}</span>
+                            <span>{{'DevOps'}} | {{cloudengs[0]?.created_at| date:'mediumDate':'fr' }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" (click)="goToCloudEng(cloudengs[1]?.id)">
+                    <div class="am">
+                        <img [src]="cloudengs[1]?.feature_image" alt="ARTICLE" >
+                        <div class="description">
+                            <span>{{cloudengs[1]?.title}}</span>
+                            <span>DevOps | {{cloudengs[1]?.created_at| date:'mediumDate':'fr' }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="item">
+                    <div class="sm yellow">
+                        <span>WIKIBEDIA</span>
+                        <span>Le glossaire du cloud : outils, concepts clés, métiers…</span>
+                        <a [routerLink]="['wikibedia']"><span>Voir tous les articles</span></a>    
+                    </div>
+                </div>
+                <div class="item" (click)="goToWiki(wikibedia[1]?.id)">
+                    <div class="am">
+                        <img [src]="wikibedia[1]?.feature_image" alt="ARTICLE" >
+                        <div class="description">
+                            <span>{{wikibedia[1]?.title}}</span>
+                            <span>{{'DevOps'}} | {{wikibedia[1]?.created_at| date:'mediumDate':'fr' }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" (click)="goToWiki(wikibedia[2]?.id)">
+                    <div class="am">
+                        <img [src]="wikibedia[2]?.feature_image" alt="ARTICLE" >
+                        <div class="description">
+                            <span>{{wikibedia[2]?.title}}</span>
+                            <span>{{'DevOps'}} | {{wikibedia[2]?.created_at| date:'mediumDate':'fr' }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="item">
+                    <div class="sm red">
+                        <span>ACTUALITÉS</span>
+                        <span>BeOpen IT life, learnings & events…</span>
+                        <a [routerLink]="['news']"><span>Voir tous les articles</span></a>    
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="am">
+                        <img src="" alt="ARTICLE" >
+                        <div class="description">
+                            <span>CNCF survey 2021 : Les</span>
+                            <span>DevOps | 16 Novembre 2021</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="am">
+                        <img src="" alt="ARTICLE" >
+                        <div class="description">
+                            <span>CNCF survey 2021 : Les</span>
+                            <span>DevOps | 16 Novembre 2021</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="item">
+                    <div class="sm cno">
+                        <span>CNO</span>
+                        <span>Actualités, mise à jours, composants…</span>
+                        <a [routerLink]="['cno']"><span>Voir tous les articles</span></a>    
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="am">
+                        <img src="" alt="ARTICLE" >
+                        <div class="description">
+                            <span>CNCF survey 2021 : Les</span>
+                            <span>DevOps | 16 Novembre 2021</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="am">
+                        <img src="" alt="ARTICLE" >
+                        <div class="description">
+                            <span>CNCF survey 2021 : Les</span>
+                            <span>DevOps | 16 Novembre 2021</span>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+<div class="loading" *ngIf="spin == true">
+    <em class="fas fa-dharmachakra fa-spin"></em>
+</div>

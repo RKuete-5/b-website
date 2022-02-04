@@ -1,0 +1,181 @@
+<nav [ngClass]="{'fixed': status === true }">
+    <div class="_ctn flex-x">
+          <div class="_lft flex-x">
+              <button (click)="toggleMobileNav()">
+                <div class="nav-icon" [ngClass]="{'open': open == true}">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </button>
+
+              <div class="logo flex-xy">
+                  <img alt="BEOPENIT" (click)="redirectTo('/')">
+                </div>     
+              <div class="_menus flex-x">
+                <div class="dropdown green">
+                  <a class="drop-item flex-x" (click)="redirectTo('/expertise')" [ngClass]="{'active' : currentUrl == '/expertise'}">
+                    <span>{{"Expertise"}}</span>
+                     <em  class="fas fa-chevron-down"></em>
+                  </a>
+                  <div class="dropdown-content">
+                      <div class="flex-y">
+                          <span>{{"CLOUD TRANSFORMATION"}}</span>
+                          <span>{{"Construisons une infrastructure résiliantes, agile et rentable."}}</span>
+                          <span>{{'En savoir plus '}}<em  class="fas fa-chevron-right"></em></span> 
+                      </div>
+                  </div>
+                </div>
+                <div class="dropdown red">
+                  <a class="drop-item flex-x" (click)="redirectTo('/formations')" [ngClass]="{'active' : currentUrl == '/formations'}">
+                    <span>{{"Formations"}}</span>
+                     <em  class="fas fa-chevron-down"></em>
+                  </a>
+                  <div class="dropdown-content">
+                      <div class="flex-y">
+                          <span>{{"PARCOURS SUR-MESURE"}}</span>
+                          <span>{{"Accompagnez vos équipes Jusqu’à l’autonomie."}}</span>
+                          <span>{{'En savoir plus '}}<em  class="fas fa-chevron-right"></em></span> 
+                      </div>
+                  </div>
+                </div>
+                <div class="dropdown yellow">
+                  <a class="drop-item flex-x" (click)="redirectTo('/bebliotheque')">
+                    <span><strong style="color:#4D75B4">Be</strong>bliothèque</span>
+                     <em  class="fas fa-chevron-down"></em>
+                  </a>
+                  <div class="dropdown-content">
+                      <div class="flex-y">
+                          <span>{{"CONTINUOUS KNOW-HOW"}}</span>
+                          <span>{{"Le levier de notre réussite commune."}}</span>
+                          <span>{{'En savoir plus '}}<em  class="fas fa-chevron-right"></em></span> 
+                      </div>
+                      <div>
+                          <div class="ybloc">
+                              <div class="item">
+                                  <a ><span>{{"Trainings"}}</span></a>   
+                              </div>
+                              <div class="item">
+                                <a ><span>{{"Cloud Engineering"}}</span></a>
+                              </div>
+                              <div class="item">
+                                <a ><span>{{"Wikibedia"}}</span></a>
+                              </div>
+                              <div class="item">
+                                <a ><span>{{"Actualité"}}</span></a>
+                              </div>
+                              <div class="item">
+                                <a ><span>{{"CNO"}}</span></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="_rht flex-x">
+              <span>{{'nouveauté'}}</span>
+              <button (click)="redirection()"><span>{{'CNO'}}</span></button>
+          </div>
+    </div>
+    <div class="scroll-progress">
+       <div [style]="'width:'+ (layoutService.scrollIndicator |async)+'%'"></div>
+    </div>
+    <div class="mobile-menus" [ngClass]="{'open': open == true}">
+      <div class="accordion" id="mobileMenu">
+         <div class="accordion-item">
+          <h2 class="accordion-header" id="heading_2">
+            <button class="accordion-button collapsed"  type="button" (click)="toggleCollapse('collapse_2')">
+                <span>{{"Expertise"}}</span>
+            </button>
+          </h2>
+          <div id="collapse_2" class="accordion-collapse collapse" data-bs-parent="#mobileMenu">
+            <div class="accordion-body flex-y green">
+                <a class="bloc-1" (click)="redirectTo('/expertise')">
+                    <span>{{"CLOUD TRANSFORMATION"}}</span>
+                    <span>{{'En savoir plus '}}<em  class="fas fa-chevron-right"></em></span>
+                </a>
+                <div class="bloc-2">
+                    <div>
+                        <span [style.color]="'#199E58'">{{"ACCOMPAGNEMENT 360°"}}</span>
+                        <a><span>{{"DevSecOps"}}</span></a>
+                        <a><span>{{"Cybersécurité"}}</span></a>
+                        <a><span>{{"Data, ML & IA"}}</span></a>
+                        <a><span>{{"Formations"}}</span></a>
+                    </div>
+                    <div>
+                      <span [style.color]="'#199E58'">{{"PRODUIT"}}</span>
+                      <a><span>{{"Logo produit"}}</span></a>
+                      <a><span>{{"Unifiez et Automatisez votre workflow Kubernetes"}}</span></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading_3">
+            <button class="accordion-button collapsed"  type="button" (click)="toggleCollapse('collapse_3')">
+                <span>{{"Formations"}}</span>
+            </button>
+          </h2>
+          <div id="collapse_3" class="accordion-collapse collapse" data-bs-parent="#mobileMenu">
+            <div class="accordion-body flex-y red">
+                <a class="bloc-1" (click)="redirectTo('/formations')">
+                    <span>{{"PARCOURS SUR-MESURE"}}</span>
+                    <span>{{'En savoir plus '}}<em  class="fas fa-chevron-right"></em></span>
+                </a>
+                <div class="bloc-2">
+                    <div>
+                        <span [style.color]="'#DB4537'">{{"CERTIFIANTES"}}</span>
+                        <a><span>{{"Kubernetes CKAD"}}</span></a>
+                        <a><span>{{"Kubernetes CKA"}}</span></a>
+                        <a><span>{{"Kubernetes CKS"}}</span></a>
+                    </div>
+                    <div>
+                      <span [style.color]="'#DB4537'">{{"MISE À NIVEAU"}}</span>
+                      <a><span>{{"K8S fondamentals"}}</span></a>
+                      <a><span>{{"K8S in production"}}</span></a>
+                      <a><span>{{"K8S Advanced"}}</span></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading_1">
+            <button class="accordion-button collapsed"  type="button" (click)="toggleCollapse('collapse_4')">
+                <span>{{"Bebliothèque"}}</span>
+            </button>
+          </h2>
+          <div id="collapse_4" class="accordion-collapse collapse" data-bs-parent="#mobileMenu">
+            <div class="accordion-body flex-y yellow">
+                <a class="bloc-1" (click)="redirectTo('/bebliotheque')">
+                    <span>{{"CONTINUOUS KNOW-HOW"}}</span>
+                    <span>{{'En savoir plus '}}<em  class="fas fa-chevron-right"></em></span>
+                </a>
+                <div class="bloc-2">
+                    <div>
+                        <a><span>{{"Trainings"}}</span></a>
+                        <a><span>{{"Cloud Engineering"}}</span></a>
+                        <a><span>{{"Wikibedia"}}</span></a>
+                        <a><span>{{"Actualité"}}</span></a>
+                        <a><span>{{"CNO"}}</span></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading_4">
+            <button class="accordion-button collapsed"  type="button" (click)="redirection()">
+                <span>{{"CNO"}}</span>
+            </button>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="contact-mob" (click)="redirectTo('contact')">
+      <img src="../../../assets/img/email.svg" alt="">
+      <span>{{'Contacts'}}</span>
+    </div>
+</nav>
