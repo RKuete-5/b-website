@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { filter } from "rxjs/operators";
+import { NavigationEnd, Router } from '@angular/router';
 import { AppService } from 'src/app/shared/services/app.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class BibliothequeComponent implements OnInit {
   constructor(private appService: AppService, private router : Router) { }
 
   ngOnInit(): void {
-    
+    this.loadPage();
   }
 
   toggleMobileNav(): void {
@@ -24,6 +25,14 @@ export class BibliothequeComponent implements OnInit {
   directTo(path: string) {
     this.open = false;
     this.router.navigate([path]);
+  }
+
+  loadPage(): void {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((_: any) => {
+        document.querySelector(".comh").scrollTop = 0;
+      });
   }
 
 }
